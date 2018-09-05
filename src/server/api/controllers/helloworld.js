@@ -2,11 +2,11 @@
 
 exports.sayHello = function(request, response, next){
     response.statusCode = 200;
-    response.setHeader('Content-Type', 'text');
+    response.setHeader('Content-Type', 'text/html; charset=utf-8');
 
     response.write("Hello World!");
 
-    reponse.end();
+    response.end();
 
 
 }
