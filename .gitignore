@@ -1,0 +1,5 @@
+# npm auto generated stuff
+node_modules
+
+# hidden files
+.DS_Store

@@ -1,0 +1,19 @@
+{
+    "name": "synergy-robert-walters",
+    "version": "1.0.0",
+    "description": "synergy-robert-walters",
+    "main": "./src/server/server.js",
+    "scripts": {
+        "start": "nodemon ./src/server/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Anthony Wong",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "express": "^4.16.2",
+        "mysql": "^2.15.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.12.1"
+    }
+}
