@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Synergy Hackathon</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="rwStyle.css">
+</head>
+
+<body style="background:#f3efed">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#"><img class="logo" src="img/RobertWaltersLogo.png" height="90px" width="280px"></a>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" align="right">
+                    Employee
+                </button>
+                <div class="dropdown-menu">
+                    <a href="My Account"></a>
+                    <a href="Sign out"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="management-body">
+        <div class="sidebar">
+            <div class="sidenav">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#clients">Clients</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="cards-component" id="card-collection">
+            <div class="card">
+                <div class="card-header">
+                    <span>Derek Kim</span>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer><input type="image" class="red-flag" src="img/flag.svg" /><input type="image" class="red-flag"
+                                src="img/greenflag.svg" /></footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>Derek Kim</span><span></span>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer><input type="image" class="red-flag" src="img/flag.svg" /><input type="image" class="red-flag"
+                                src="img/greenflag.svg" /></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <img class="footer" src="img/footer-03.png" />
+    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Flag">Flag</a> from <a href="https://www.flaticon.com/"
+            title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+            title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+</footer>
+
+<script>
+    function loadApplicationData() {
+        $.ajax({
+            url: "/candidate/" + email,
+            type: "GET",
+            success: function (responseData, textStatus, jqXHR) {
+                let cardCollection = document.getElementById("card-collection");
+                for (var application of responseData.applications) {
+                    cardCollection.innerHTML +=
+                        <div class="card">
+                            <div class="card-header">
+                                <span>Derek Kim</span>
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <footer><input type="image" class="red-flag" src="img/flag.svg" /><input type="image" class="red-flag"
+                                        src="img/greenflag.svg" /></footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                }
+                var firstName = responseData.firstName;
+                var lastName = responseData.lastName;
+
+                $("#firstName").text(firstName);
+                $("#lastName").text(lastName);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error')
+            }
+        });
+    }
+</script>
+
+</html>

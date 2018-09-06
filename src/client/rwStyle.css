@@ -1,0 +1,50 @@
+.footer {
+  width: 100%;
+  margin-top: 5%;
+}
+.card-header {
+  background-color: #06b4d0;
+}
+.card {
+  margin-bottom: 3%;
+  width: 100%;
+}
+.management-body {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+}
+.cards-component {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  border-style: solid;
+  margin-left: 1%;
+  margin-right: 5%;
+  padding-right: 3%;
+  background: white;
+}
+.sidenav {
+  width: 30%;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196f3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.red-flag {
+  width: 20px;
+  height: 20px;
+  margin-right: 5%;
+}
