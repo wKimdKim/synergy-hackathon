@@ -24,7 +24,7 @@
             <div class="btn-group">
                 <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false" align="right">
-                    Sanghee Woo
+                    <p id="firstName2"><p>
                 </button>
                 <div class="dropdown-menu">
                     <a href="My Account"></a>
@@ -41,9 +41,35 @@
             <img class="responsive" id="pictureIcon" src="img/pictureIcon.png">
             <img class="responsive" id="videoIcon" src="img/videoIcon.png">
         </div>
+        <div class="textContainer"> 
+            <form>
+                <div class="form-group row">
+                    <label for="firstNameLabel" class="col-sm-2 col-form-label">First Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="firstName1">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="lastNameLabel" class="col-sm-2 col-form-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="lastName">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="emailLabel" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="emailForm" value="emailTemp">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="bioLabel" class="col-sm-2 col-form-label">Bio</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="bioForm" value="Bio">
+                    </div>
+                </div>
+            </form>
+        </div>
         <div class="profileImageContainer">
-            <p id="firstName">sdfsdfsfsd</p>
-            <p id="lastName">sfdsdfsfsdfsd</p>
 
         </div>
         <div class="profileImageContainer">
@@ -58,20 +84,16 @@
                 <h5 class="mb-0">
                     <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                         aria-controls="collapseOne">
-                        Collapsible Group Item #1
+                        <h3 id="jobTitle"></h3>
+                        <P id="referenceNumber"></P>
                     </button>
                 </h5>
             </div>
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
+                    <p id="jobDescription"></p>
+                    <img src="">
                 </div>
             </div>
         </div>
@@ -80,19 +102,14 @@
                 <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="false" aria-controls="collapseTwo">
-                        Collapsible Group Item #2
+                        <h3 id="jobTitle"></h3>
+                        <p id="referenceNumber"></p>
                     </button>
                 </h5>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
+                    <p id="jobDescription"></p>
                 </div>
             </div>
         </div>
@@ -101,19 +118,14 @@
                 <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
                         aria-expanded="false" aria-controls="collapseThree">
-                        Collapsible Group Item #3
+                        <h3 id="jobTitle"></h3>
+                        <p id="referenceNumber"></p>
                     </button>
                 </h5>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
+                    <p id="jobDescription"></p>
                 </div>
             </div>
         </div>
@@ -127,41 +139,44 @@
 
 <script>
     function getUrlVars() {
-      var vars = {};
-      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-        vars[key] = value;
-      });
-      return vars;
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+            vars[key] = value;
+        });
+        return vars;
     }
 
     function getUrlParam(parameter, defaultvalue) {
-      var urlparameter = defaultvalue;
-      if (window.location.href.indexOf(parameter) > -1) {
-        urlparameter = getUrlVars()[parameter];
-      }
-      return urlparameter;
+        var urlparameter = defaultvalue;
+        if (window.location.href.indexOf(parameter) > -1) {
+            urlparameter = getUrlVars()[parameter];
+        }
+        return urlparameter;
     }
 
     function urldecode(url) {
-      return decodeURIComponent(url.replace(/\+/g, ' '));
+        return decodeURIComponent(url.replace(/\+/g, ' '));
     }
 
     function loadData() {
-      var email = urldecode(getUrlParam('candidate','undefined'));
-      $.ajax({
-          url: "/candidate/" + email,
-          type: "GET",
-          success: function (responseData, textStatus, jqXHR) {
-              var firstName = responseData.firstName;
-              var lastName = responseData.lastName;
+        var email = urldecode(getUrlParam('candidate', 'undefined'));
+        $.ajax({
+            url: "/candidate/" + email,
+            type: "GET",
+            success: function (responseData, textStatus, jqXHR) {
+                var firstName = responseData.firstName;
+                var lastName = responseData.lastName;
+                var email = responseData.email;
 
-              $("#firstName").text(firstName);
-              $("#lastName").text(lastName);
-          },
-          error: function (jqXHR, textStatus, errorThrown) {
-              alert('Error')
-          }
-      });
+                $("#firstName1").val(firstName);
+                $("#firstName2").text(firstName);
+                $("#lastName").val(lastName);
+                $("#emailForm").val(email);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error');
+            }
+        });
     }
 </script>
 
