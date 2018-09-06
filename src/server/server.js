@@ -22,7 +22,7 @@ app.all('*', function (request, response, next) {
 
 // ROUTES
 app.route('/helloworld')
-  .get(function (request, response, next) {
+  .post(function (request, response, next) {
     return helloWorld.sayHello(request, response, next);
   });
 
