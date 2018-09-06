@@ -15,7 +15,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
 </head>
 
-<body style="background:#f3efed">
+<body style="background:#f3efed" onload="loadData();">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -42,8 +42,8 @@
             <img class="responsive" id="videoIcon" src="img/videoIcon.png">
         </div>
         <div class="profileImageContainer">
-            <p>sdfsdfsfsd</p>
-            <p>sfdsdfsfsdfsd</p>
+            <p id="firstName">sdfsdfsfsd</p>
+            <p id="lastName">sfdsdfsfsdfsd</p>
 
         </div>
         <div class="profileImageContainer">
@@ -125,20 +125,45 @@
     </footer>
 </body>
 
-<!-- <script>
-    function SayHello() {
-        $.ajax({
-            url: "/helloworld",
-            type: "GET",
-            success: function (responseData, textStatus, jqXHR) {
-                alert('Success')
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                alert('Error')
-            }
-        });
+<script>
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+        vars[key] = value;
+      });
+      return vars;
     }
-</script> -->
+
+    function getUrlParam(parameter, defaultvalue) {
+      var urlparameter = defaultvalue;
+      if (window.location.href.indexOf(parameter) > -1) {
+        urlparameter = getUrlVars()[parameter];
+      }
+      return urlparameter;
+    }
+
+    function urldecode(url) {
+      return decodeURIComponent(url.replace(/\+/g, ' '));
+    }
+
+    function loadData() {
+      var email = urldecode(getUrlParam('candidate','undefined'));
+      $.ajax({
+          url: "/candidate/" + email,
+          type: "GET",
+          success: function (responseData, textStatus, jqXHR) {
+              var firstName = responseData.firstName;
+              var lastName = responseData.lastName;
+
+              $("#firstName").text(firstName);
+              $("#lastName").text(lastName);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+              alert('Error')
+          }
+      });
+    }
+</script>
 
 
 </html>
