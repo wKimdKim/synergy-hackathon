@@ -4,8 +4,6 @@
 <head>
     <title>Synergy Hackathon</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -75,26 +73,44 @@
             type: "GET",
             success: function (responseData, textStatus, jqXHR) {
                 let cardCollection = document.getElementById("card-collection");
-                for (var application of responseData.applications) {
+                for (var application of responseData) {
                     cardCollection.innerHTML +=
                         `<div class="card">
                             <div class="card-header">
-                                <span>` + responseData.</span >
+                                <span>` + application.firstName + " " + application.lastName + `</span >
                             </div >
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                <footer><input type="image" class="red-flag" src="img/flag.svg" /><input type="image" class="red-flag"
-                                    src="img/greenflag.svg" /></footer>
-                            </blockquote>
-                        </div>
-                        </div > '`
+                                <p> Reference Number: `+ application.referenceNumber + `</p>
+                                <p> Job Title: `+ application.jobTitle + `</p>
+                                <p> Job Description: `+ application.jobDescription + `</p>
+                                <p> Email: `+ application.email + `</p>
+                                <footer><input type="image" class="red-flag" src="img/flag.svg" /><input type="image" onclick ="passApplicant('` + application.email + '\', \'' + application.firstName + '\', ' + '\'interview' + `')" class="red-flag"
+        src = "img/greenflag.svg" /></footer >
+                            </blockquote >
+                        </div >
+                        </div >`
                 }
-                var firstName = responseData.firstName;
-                var lastName = responseData.lastName;
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error')
+            }
+        });
+    }
 
-                $("#firstName").text(firstName);
-                $("#lastName").text(lastName);
+    function passApplicant(email, name, stage) {
+        var data = `{
+            "email":"` + email + `",
+            "name":"`+ name + `",
+            "stage":"`+ stage + `"
+        }`;
+        $.ajax({
+            url: "/sendEmail",
+            type: "PUT",
+            contentType: "application/json; charset=UTF-8",
+            data: data,
+            success: function (responseData, textStatus, jqXHR) {
+                alert('Success')
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert('Error')
