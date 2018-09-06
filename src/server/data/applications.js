@@ -24,3 +24,12 @@ exports.getApplication = function(email) {
   }
   return result;
 }
+
+exports.listApplications = function() {
+  let result = [];
+  for(var application of database.applications) {
+     console.log('listing: ', application.email);
+     result.push(application);
+  }
+  return result;
+}
