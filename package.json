@@ -6,6 +6,7 @@
     "scripts": {
         "start": "nodemon ./src/server/server.js",
         "setup": "./node_modules/newman/bin/newman.js run ./src/server/sample/postman_collection.json",
+        "setup-win": "node %cd%\\node_modules\\newman\\bin\\newman.js run %cd%\\src\\server\\sample\\postman_collection.json",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Anthony Wong",
