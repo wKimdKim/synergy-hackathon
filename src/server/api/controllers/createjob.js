@@ -1,12 +1,20 @@
-'use strict';
+"use strict";
 
-exports.sayHello = function(request, response, next){
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'text/html; charset=utf-8');
+const jobs = require("../../data/jobs");
 
-    response.write('Jobs');
+exports.createJob = function(request, response, next) {
 
-    response.end();
+  var job = {
+    referenceNumber: request.body.referenceNumber,
+    jobTitle: request.body.jobTitle,
+    jobDescription: request.body.jobDescription
+  }
 
+  jobs.putJob(job);
 
-}
+  var getJob = jobs.getJob("1234");
+  console.log("Found job: " + job.jobTitle);
+
+  response.statusCode = 200;
+  response.end();
+};

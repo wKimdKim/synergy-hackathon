@@ -4,11 +4,11 @@ var database = {
   candidates: []
 };
 
-// const exampleStructure = {
-//   firstName: "",
-//   lastName: "",
-//   email: ""
-// }
+const exampleStructure = {
+  firstName: "",
+  lastName: "",
+  email: ""
+}
 
 exports.putCandidate = function(data) {
   database.candidates.push(data);

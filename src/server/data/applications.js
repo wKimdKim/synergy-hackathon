@@ -4,19 +4,19 @@ var database = {
   applications: []
 };
 
-// const exampleStructure = {
-//   referenceNo: "",
-//   email: ""
-// }
+const exampleStructure = {
+  referenceNumber: "",
+  email: ""
+}
 
-exports.putCandidate = function(data) {
+exports.putApplication = function(data) {
   database.applications.push(data);
   console.log(JSON.stringify(database, null, 2));
 }
 
-exports.getCandidate = function(referenceNo) {
+exports.getApplication = function(email) {
   for(var application of database.applications) {
-     console.log('found: ', application.referenceNo);
+     console.log('found: ', application.email);
      return application;
   }
 }
