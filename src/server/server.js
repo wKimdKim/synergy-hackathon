@@ -41,9 +41,9 @@ app.route("/application").post(function(request, response, next) {
 });
 
 // CLIENT-SIDE ROUTES
-app.route("/candidate/:email").get(function(request, response, next) {
+app.route("/candidates/:email").get(function(request, response, next) {
   var email = encodeURIComponent(request.params.email.toLowerCase());
-  response.redirect(301, "/index.html?candidate=" + email);
+  response.redirect(301, "/candidate.html?candidate=" + email);
 });
 
 // Handle errors
