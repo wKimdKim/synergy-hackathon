@@ -27,7 +27,9 @@ exports.sendEmail = function(request, response, next) {
       request.body.name +
       "! You have moved onto the " +
       request.body.stage +
-      " stage."
+      " stage." +
+      "https://localhost:3000/candidates/" +
+      email
   };
 
   transporter.sendMail(mailOptions, function(error, info) {
