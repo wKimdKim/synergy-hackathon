@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
-    <title>Synergy Hackathon</title>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+  <title>Synergy Hackathon</title>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
 </head>
 
 <body>
-
-    <button onclick="SayHello()">Test</button>
-
+  <button onclick="SayHello()">Test</button>
+  <button onclick="alert(urldecode(getUrlParam('candidate','undefined')));">Email</button>
 </body>
 
 <script>
-    function SayHello() {
-        $.ajax({
-            url: "/helloworld",
-            type: "GET",
-            success: function (responseData, textStatus, jqXHR) {
-                alert('Success')
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                alert('Error')
-            }
-        });
+  function SayHello() {
+    $.ajax({
+      url: "/helloworld",
+      type: "GET",
+      success: function(responseData, textStatus, jqXHR) {
+        alert('Success')
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        alert('Error')
+      }
+    });
+  }
+
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
+
+  function getUrlParam(parameter, defaultvalue) {
+    var urlparameter = defaultvalue;
+    if (window.location.href.indexOf(parameter) > -1) {
+      urlparameter = getUrlVars()[parameter];
     }
+    return urlparameter;
+  }
 
+  function urldecode(url) {
+    return decodeURIComponent(url.replace(/\+/g, ' '));
+  }
 </script>
-
 
 </html>

@@ -33,6 +33,13 @@ app.route("/getDetail").get(function(request, response, next) {
   return detail.getDetail(request, response, next);
 });
 
+// CLIENT-SIDE ROUTES
+app.route('/candidate/:email')
+  .get(function (request, response, next) {
+    var email = encodeURIComponent(request.params.email.toLowerCase());
+    response.redirect(301, '/index.html?candidate=' + email);
+  });
+
 // Handle errors
 app.use(function(error, request, response, next) {
   console.error(error);
