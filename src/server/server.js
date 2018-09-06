@@ -6,9 +6,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Routing handlers
-const helloWorld = require("./api/controllers/helloworld");
-const emailer = require("./api/controllers/sendEmail");
-const candidate = require("./api/controllers/getCandidate");
+const emailer = require("./api/controllers/email");
+const candidate = require("./api/controllers/candidate");
+const job = require("./api/controllers/job");
+const application = require("./api/controllers/application");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -23,8 +24,8 @@ app.all("*", function(request, response, next) {
 });
 
 // ROUTES
-app.route("/helloworld").post(function(request, response, next) {
-  return helloWorld.sayHello(request, response, next);
+app.route("/createJob").post(function(request, response, next) {
+  return job.createJob(request, response, next);
 });
 app.route("/sendEmail").put(function(request, response, next) {
   return emailer.sendEmail(request, response, next);
@@ -32,6 +33,10 @@ app.route("/sendEmail").put(function(request, response, next) {
 app.route("/getCandidate").get(function(request, response, next) {
   return candidate.getCandidate(request, response, next);
 });
+app.route("/createCandidate").post(function(request, response, next) {
+  return candidate.createCandidate(request, response, next);
+});
+
 
 // CLIENT-SIDE ROUTES
 app.route("/candidate/:email").get(function(request, response, next) {

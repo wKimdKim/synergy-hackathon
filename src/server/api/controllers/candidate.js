@@ -12,8 +12,9 @@ exports.createCandidate = function (request, response, next) {
 
     candidates.putCandidate(candidate);
 
-    var getCandidate = candidates.getCandidate("1");
-    console.log("Found emails for candidates: " + candidate.email);
+    // var getCandidate = candidates.getCandidate("contact@anthonywong.co.nz");
+    // console.log("Found candidates: " + candidate.FirstName + " " + candidate.LastName);
+    console.log(JSON.stringify(candidate, null, 2));
 
     response.statusCode = 200;
     response.end();
