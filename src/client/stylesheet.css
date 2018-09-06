@@ -56,10 +56,16 @@ li {
     justify-content: flex-start;
 }
 
+.textContainer {
+    width: 90%;
+    margin-top: 10px;
+}
+
 #uploadIcon {
     border-radius: 5px;
     margin-top: 12px;
     margin-left: 10px;
+    width: 85%;
 }
 
 .abc {
@@ -105,4 +111,15 @@ li {
 .responsive {
     width: 100%;
     height: auto;
+}
+
+#accordion {
+    padding-top: 10px;
+    width: 70%;
+    margin: auto;
+}
+
+.col-form-label {
+    font-size: 20px !important;
+    color: white;
 }
