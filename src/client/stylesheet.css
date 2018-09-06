@@ -1,0 +1,108 @@
+button {
+    background: blue;
+}
+
+.logo {
+    padding-top: 8px;
+}
+
+li {
+    align-items: center;
+    font-size: 20px;
+    margin: 15px;
+    margin-left: 50px;
+    padding-top: 10px;
+    color: white;
+}
+
+.container-fluid {
+    background: #06b4d0;
+    padding-bottom: 10px;
+}
+
+.navbar-nav {
+    color:white;
+}
+
+.mainImage1 {
+    padding-top: 70px;
+}
+
+.btn-group {
+    float: right;
+    margin: 20px;
+    color: white;
+}
+
+.profileImageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 70%;
+    background: #06b4d0;
+    margin: auto;
+    margin-top: 25px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.profile-img-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#uploadIcon {
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+.abc {
+    float: right;
+}
+#pictureIcon {
+    border-radius: 5px;
+    margin: 10px;
+    width: 210px;
+    height: 150px;
+}
+
+#videoIcon {
+    border-radius: 5px;
+    margin: 10px;
+    width: 210px;
+    height: 150px;
+}
+
+.mainContainer {
+    background: #f3efed;
+}
+
+.itemContainer {
+    width: 70%;
+    background: #06b4d0;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.btn {
+    padding-top: 10px;
+    float: right;
+}
+
+.panel-default {
+    margin: 10px;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
