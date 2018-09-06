@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 // Routing handlers
 const helloWorld = require("./api/controllers/helloworld");
 const emailer = require("./api/controllers/sendEmail");
+const detail = require("./api/controllers/getDetail");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -22,12 +23,14 @@ app.all("*", function(request, response, next) {
 });
 
 // ROUTES
-app.route('/helloworld')
-  .post(function (request, response, next) {
-    return helloWorld.sayHello(request, response, next);
-  });
+app.route("/helloworld").post(function(request, response, next) {
+  return helloWorld.sayHello(request, response, next);
+});
 app.route("/sendEmail").put(function(request, response, next) {
   return emailer.sendEmail(request, response, next);
+});
+app.route("/getDetail").get(function(request, response, next) {
+  return detail.getDetail(request, response, next);
 });
 
 // Handle errors
