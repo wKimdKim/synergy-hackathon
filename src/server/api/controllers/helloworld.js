@@ -1,26 +1,20 @@
 "use strict";
 
+const jobs = require("../../data/jobs");
+
 exports.sayHello = function(request, response, next) {
-  // response.statusCode = 200;
-  // response.setHeader("Content-Type", "text/html; charset=utf-8");
 
-  let json = request.body;
-  console.log(json);
-  let job_list = [];
-
-  for (var element in json) {
-    job_list.push([element, json[element]]);
+  var job = {
+    referenceNumber: request.body.referenceNumber,
+    jobTitle: request.body.jobTitle,
+    jobDescription: request.body.jobDescription
   }
 
-  console.log(job_list);
+  jobs.putJob(job);
 
-  // for (var i = 0; i<job_list.length; i++) {
-  //     console.log(job_list[i][0]);
-  //     console.log(job_list[i][1]);
-  //     console.log("");
-  // }
+  var getJob = jobs.getJob("1234");
+  console.log("Found job: " + job.jobTitle);
 
-  // response.write("TEST");
-
+  response.statusCode = 200;
   response.end();
 };
