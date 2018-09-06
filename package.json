@@ -5,6 +5,7 @@
     "main": "./src/server/server.js",
     "scripts": {
         "start": "nodemon ./src/server/server.js",
+        "setup": "./node_modules/newman/bin/newman.js run ./src/server/sample/postman_collection.json",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Anthony Wong",
@@ -12,6 +13,7 @@
         "body-parser": "^1.18.2",
         "express": "^4.16.2",
         "mysql": "^2.15.0",
+        "newman": "^4.1.0",
         "nodemailer": "^4.6.8"
     },
     "devDependencies": {

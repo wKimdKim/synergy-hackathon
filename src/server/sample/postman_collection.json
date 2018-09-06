@@ -1,0 +1,739 @@
+{
+	"info": {
+		"_postman_id": "ed8b6f62-0ac3-4aec-a297-e73c08053030",
+		"name": "synergy_hackathon",
+		"description": "Populate jobs, candidates, applications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/candidate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Bob\",\n\t\"lastName\":\"Carly\",\n\t\"email\":\"b.carly@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/candidate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"candidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/candidate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Anthony\",\n\t\"lastName\":\"Wong\",\n\t\"email\":\"contact@anthonywong.co.nz\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/candidate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"candidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/candidate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Eric\",\n\t\"lastName\":\"Chen\",\n\t\"email\":\"superhot@hotmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/candidate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"candidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/candidate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Wobert\",\n\t\"lastName\":\"Ralters\",\n\t\"email\":\"wobert@wobertralters.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/candidate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"candidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/candidate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Sam\",\n\t\"lastName\":\"Woo\",\n\t\"email\":\"kittycat@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/candidate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"candidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/candidate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Ben\",\n\t\"lastName\":\"Lao\",\n\t\"email\":\"937299373@qq.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/candidate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"candidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"1\",\n\t\"jobTitle\": \"SQL Developer\",\n\t\"jobDescription\": \"Robert Walters is looking for a SQL developer with at least 3 years of experience.\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/job",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"2\",\n\t\"jobTitle\": \"Junior Business Analyst\",\n\t\"jobDescription\": \"AIG is looking for a graduate for a junior business analyst position.\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/job",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"3\",\n\t\"jobTitle\": \"Java Developer\",\n\t\"jobDescription\": \"AIG is looking for a graduate for a Java developer.\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/job",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"4\",\n\t\"jobTitle\": \".NET Developer\",\n\t\"jobDescription\": \"TVNZ is looking for an experienced .NET Developer.\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/job",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"5\",\n\t\"jobTitle\": \"Security Analyst\",\n\t\"jobDescription\": \"KFC is looking for a security analyst with at least 50 years of experience.\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/job",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"1\",\n\t\"email\": \"contact@anthonywong.co.nz\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"2\",\n\t\"email\": \"contact@anthonywong.co.nz\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"1\",\n\t\"email\": \"b.carly@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"2\",\n\t\"email\": \"b.carly@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"4\",\n\t\"email\": \"b.carly@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"5\",\n\t\"email\": \"b.carly@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"3\",\n\t\"email\": \"superhot@hotmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"4\",\n\t\"email\": \"superhot@hotmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"5\",\n\t\"email\": \"superhot@hotmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"2\",\n\t\"email\": \"wobert@wobertralters.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"3\",\n\t\"email\": \"wobert@wobertralters.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"1\",\n\t\"email\": \"kittycat@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"4\",\n\t\"email\": \"kittycat@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"2\",\n\t\"email\": \"937299373@qq.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"3\",\n\t\"email\": \"937299373@qq.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceNumber\": \"5\",\n\t\"email\": \"937299373@qq.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/application",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"application"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
