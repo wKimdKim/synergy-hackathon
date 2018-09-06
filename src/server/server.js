@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 // Routing handlers
 const helloWorld = require("./api/controllers/helloworld");
 const emailer = require("./api/controllers/sendEmail");
-const detail = require("./api/controllers/getDetail");
+const candidate = require("./api/controllers/getCandidate");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -29,16 +29,15 @@ app.route("/helloworld").post(function(request, response, next) {
 app.route("/sendEmail").put(function(request, response, next) {
   return emailer.sendEmail(request, response, next);
 });
-app.route("/getDetail").get(function(request, response, next) {
-  return detail.getDetail(request, response, next);
+app.route("/getCandidate").get(function(request, response, next) {
+  return candidate.getCandidate(request, response, next);
 });
 
 // CLIENT-SIDE ROUTES
-app.route('/candidate/:email')
-  .get(function (request, response, next) {
-    var email = encodeURIComponent(request.params.email.toLowerCase());
-    response.redirect(301, '/index.html?candidate=' + email);
-  });
+app.route("/candidate/:email").get(function(request, response, next) {
+  var email = encodeURIComponent(request.params.email.toLowerCase());
+  response.redirect(301, "/index.html?candidate=" + email);
+});
 
 // Handle errors
 app.use(function(error, request, response, next) {
