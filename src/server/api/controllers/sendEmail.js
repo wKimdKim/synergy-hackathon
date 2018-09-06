@@ -9,6 +9,7 @@ exports.sendEmail = function(request, response, next) {
   const email = request.body.email;
   const name = request.body.name;
   const stage = request.body.stage;
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -20,13 +21,13 @@ exports.sendEmail = function(request, response, next) {
   const mailOptions = {
     from: "SynergyTestEmail123@gmail.com",
     to: email,
-    subject:
+    subject: "Congratulations",
+    text:
       "Congratulations " +
       request.body.name +
       "! You have moved onto the " +
       request.body.stage +
-      " stage.",
-    text: "hohoho"
+      " stage."
   };
 
   transporter.sendMail(mailOptions, function(error, info) {
