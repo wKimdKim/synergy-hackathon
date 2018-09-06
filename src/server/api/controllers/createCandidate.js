@@ -10,7 +10,7 @@ exports.createCandidate = function (request, response, next) {
         email: request.body.email
     }
 
-    jobs.putJob(candidate);
+    candidates.putCandidate(candidate);
 
     var getCandidate = candidates.getCandidate("1");
     console.log("Found emails for candidates: " + candidate.email);
