@@ -15,8 +15,12 @@ exports.putApplication = function(data) {
 }
 
 exports.getApplication = function(email) {
+  let result = [];
   for(var application of database.applications) {
      console.log('found: ', application.email);
-     return application;
+     if (application.email === email) {
+       result.push(application);
+     }
   }
+  return result;
 }

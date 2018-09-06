@@ -2,7 +2,7 @@
 
 const candidateHandler = require("../../data/candidates");
 const jobHandler = require("../../data/jobs");
-const applicationHandler = require(".../data/applications");
+const applicationHandler = require("../../data/applications");
 
 exports.createCandidate = function(request, response, next) {
   var candidate = {
@@ -22,19 +22,36 @@ exports.createCandidate = function(request, response, next) {
 };
 
 exports.getCandidate = function(request, response, next) {
-  let result = {};
+  let result = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    applications: []
+  };
 
-  const candidateEmail = request.body;
+  const candidateEmail = request.params.email;
+  console.log('candidateEmail: ' + candidateEmail);
+
   const candidate = candidateHandler.getCandidate(candidateEmail);
-  result.push(candidate);
-  const applications = applicationHandler.getApplication(candidateEmail);
-  result.push(applications);
+  console.log('candidate: ' + JSON.stringify(candidate, null, 2));
+  result.firstName = candidate.firstName;
+  result.lastName = candidate.lastName;
+  result.email = candidate.email;
 
-  for (var application of result.applications) {
-    const job = jobHandler.getJob(application.referenceNumber);
-    application.push(job.jobTitle);
-    application.push(job.jobDescription);
+  const applications = applicationHandler.getApplication(candidateEmail);
+  console.log('applications: ' + JSON.stringify(applications, null, 2));
+  for (var application of applications) {
+    result.applications.push(application);
   }
+
+  console.log(JSON.stringify(result, null, 2));
+
+  result.applications.forEach(function(application) {
+    const job = jobHandler.getJob(application.referenceNumber);
+    console.log('job: ' + JSON.stringify(job, null, 2));
+    application.jobTitle = job.jobTitle;
+    application.jobDescription = job.jobDescription;
+  });
 
   response.statusCode = 200;
   response.setHeader("Content-Type", "application/json; charset=utf-8");

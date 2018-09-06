@@ -16,8 +16,10 @@ exports.putCandidate = function(data) {
 }
 
 exports.getCandidate = function(email) {
-  for(var candidate of database.candidates) {
-     console.log('found: ', candidate.email);
-     return candidate;
+  for (var candidate of database.candidates) {
+    if (candidate.email === email) {
+      console.log('found: ', candidate.email);
+      return candidate;
+    }
   }
 }

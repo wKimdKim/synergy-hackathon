@@ -16,8 +16,10 @@ exports.putJob = function(data) {
 }
 
 exports.getJob = function(referenceNumber) {
-  for(var job of database.jobs) {
-     console.log('found: ', job.referenceNumber);
-     return job;
+  for (var job of database.jobs) {
+    if (job.referenceNumber === referenceNumber) {
+      console.log('found: ', job.referenceNumber);
+      return job;
+    }
   }
 }

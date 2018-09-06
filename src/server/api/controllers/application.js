@@ -11,9 +11,6 @@ exports.createApplication = function (request, response, next) {
 
     applications.putApplication(application);
 
-    // var getApplication = applications.getApplication("testing@gmail.com");
-    // console.log("Found email for candidate: " + application.email);
-
     response.statusCode = 200;
     response.end();
 };

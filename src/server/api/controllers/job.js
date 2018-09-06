@@ -12,9 +12,6 @@ exports.createJob = function(request, response, next) {
 
   jobs.putJob(job);
 
-  var getJob = jobs.getJob("1234");
-  console.log("Found job: " + job.jobTitle);
-
   response.statusCode = 200;
   response.end();
 };

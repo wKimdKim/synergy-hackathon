@@ -24,19 +24,21 @@ app.all("*", function(request, response, next) {
 });
 
 // ROUTES
-app.route("/createJob").post(function(request, response, next) {
+app.route("/job").post(function(request, response, next) {
   return job.createJob(request, response, next);
 });
 app.route("/sendEmail").put(function(request, response, next) {
   return emailer.sendEmail(request, response, next);
 });
-app.route("/getCandidate").get(function(request, response, next) {
+app.route("/candidate/:email").get(function(request, response, next) {
   return candidate.getCandidate(request, response, next);
 });
-app.route("/createCandidate").post(function(request, response, next) {
+app.route("/candidate").post(function(request, response, next) {
   return candidate.createCandidate(request, response, next);
 });
-
+app.route("/application").post(function(request, response, next) {
+  return application.createApplication(request, response, next);
+});
 
 // CLIENT-SIDE ROUTES
 app.route("/candidate/:email").get(function(request, response, next) {
