@@ -38,7 +38,7 @@ exports.getCandidate = function(request, response, next) {
   result.lastName = candidate.lastName;
   result.email = candidate.email;
 
-  const applications = applicationHandler.getApplication(candidateEmail);
+  const applications = applicationHandler.listApplicationsByEmail(candidateEmail);
   console.log('applications: ' + JSON.stringify(applications, null, 2));
   for (var application of applications) {
     result.applications.push(application);

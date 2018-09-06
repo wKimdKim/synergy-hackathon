@@ -10,6 +10,7 @@ const emailer = require("./api/controllers/email");
 const candidate = require("./api/controllers/candidate");
 const job = require("./api/controllers/job");
 const application = require("./api/controllers/application");
+const feedback = require("./api/controllers/feedback");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -38,6 +39,9 @@ app.route("/application").post(function(request, response, next) {
 });
 app.route("/application").get(function(request, response, next) {
   return application.listApplications(request, response, next);
+});
+app.route("/request-feedback").put(function(request, response, next) {
+  return feedback.requestFeedback(request, response, next);
 });
 app.route("/sendEmail").put(function(request, response, next) {
   return emailer.sendEmail(request, response, next);

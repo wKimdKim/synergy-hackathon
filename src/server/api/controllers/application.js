@@ -40,4 +40,4 @@ exports.listApplications = function(request, response, next) {
   response.write(JSON.stringify(result, null, 2));
 
   response.end();
-}
+};
