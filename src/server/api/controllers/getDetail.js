@@ -1,30 +1,23 @@
 "use strict";
 
-var applications = {
-  jobs: {
-    "SQL Developer": [
-      { email: "wkimdkim@gmail.com" },
-      { email: "abc@gmail.com" },
-      { email: "def@gmail.com" }
-    ],
-    "Front-End Developer": [
-      { email: "wkimdkim@gmail.com" },
-      { email: "abc@gmail.com" },
-      { email: "def@gmail.com" }
-    ],
-    "Back-End Developer": [
-      { email: "wkimdkim@gmail.com" },
-      { email: "abc@gmail.com" },
-      { email: "def@gmail.com" }
-    ]
-  }
-};
+var applications = [ [ 'reference_number', '1' ],
+[ 'email', 'testing@synergy.com' ],
+[ 'application_date', '05/05/2018' ] ];
 
 exports.getDetail = function(request, response, next) {
   const applicantID = request.body.email;
-  for (const application of applications.jobs) {
-    console.log(application);
+  // console.log(applications.jobs);
+  // for (const application of applications.jobs) {
+  //   console.log(application);
+  // }
+
+  for (var i = 0; i < applications.length; i++){
+    var obj = applications[i];
+    console.log(obj);
   }
+
   response.statusCode = 200;
   response.setHeader("Content-Type", "text/html; charset=utf-8");
+
+  response.end();
 };
