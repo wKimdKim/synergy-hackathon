@@ -28,7 +28,7 @@ exports.sendEmail = function(request, response, next) {
       "! You have moved onto the next " +
       request.body.stage +
       " stage. Click on the link to be redirected to your profile. " +
-      "https://localhost:3000/candidates/" +
+      "http://localhost:3000/candidates/" +
       email
   };
 
