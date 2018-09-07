@@ -23,11 +23,11 @@ exports.sendEmail = function(request, response, next) {
     to: email,
     subject: "Congratulations",
     text:
-      "Congratulations " +
+      "Congratulation " +
       request.body.name +
-      "! You have moved onto the " +
+      "! You have moved onto the next " +
       request.body.stage +
-      " stage." +
+      " stage. Click on the link to be redirected to your profile. " +
       "https://localhost:3000/candidates/" +
       email
   };
