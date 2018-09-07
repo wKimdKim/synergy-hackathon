@@ -74,6 +74,11 @@
             success: function (responseData, textStatus, jqXHR) {
                 let cardCollection = document.getElementById("card-collection");
                 for (var application of responseData) {
+                    var feedbackRequested = "";
+                    if (application.requestingFeedback === "1") {
+                      feedbackRequested = "<p style='color: red;'>Feedback Requested!</p>";
+                    }
+
                     cardCollection.innerHTML +=
                         `<div class="card">
                             <div class="card-header">
@@ -85,6 +90,7 @@
                                 <p> Job Title: `+ application.jobTitle + `</p>
                                 <p> Job Description: `+ application.jobDescription + `</p>
                                 <p> Email: `+ application.email + `</p>
+                                `+ feedbackRequested + `
                                 <footer><input type="image" class="red-flag" src="img/flag.svg" /><input type="image" onclick ="passApplicant('` + application.email + '\', \'' + application.firstName + '\', ' + '\'interview' + `')" class="red-flag"
         src = "img/greenflag.svg" /></footer >
                             </blockquote >

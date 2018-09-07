@@ -125,13 +125,14 @@
                         aria-expanded="false" aria-controls="collapseTwo">
                         <h3>` + application.jobTitle + `</h3>
                         <p>` + application.referenceNumber + `</p>
-                        <img src ="img/progress.png"/> 
+                        <img src ="img/progress.png"/>
                     </button>
                 </h5>
             </div>
             <div id = "`+ application.referenceNumber + `" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
                     <p>`+ application.jobDescription + `</p>
+                    <p> <button onclick="requestFeedback('`+ application.referenceNumber + `', '`+ application.email + `')">Request Feedback</button></p>
                 </div>
             </div>
         </div>`
@@ -163,7 +164,26 @@
         });
         loadApplications(email);
     }
-</script>
 
+    function requestFeedback(referenceNumber, email) {
+      var data = `{
+          "referenceNumber":"` + referenceNumber + `",
+          "email":"`+ email + `"
+      }`;
+
+      $.ajax({
+          url: "/request-feedback",
+          type: "PUT",
+          contentType: "application/json; charset=UTF-8",
+          data: data,
+          success: function (responseData, textStatus, jqXHR) {
+              alert('Feedback Requested!');
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+              alert('Error');
+          }
+      });
+    }
+</script>
 
 </html>
