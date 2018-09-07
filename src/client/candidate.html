@@ -132,7 +132,7 @@
             <div id = "`+ application.referenceNumber + `" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
                     <p>`+ application.jobDescription + `</p>
-                    <p> <button onclick="requestFeedback('`+ application.referenceNumber + `', '`+ application.email + `')">Request Feedback</button></p>
+                    <p> <button class="feedback-button" onclick="requestFeedback('`+ application.referenceNumber + `', '` + application.email + `')">Request Feedback</button></p>
                 </div>
             </div>
         </div>`
@@ -166,23 +166,23 @@
     }
 
     function requestFeedback(referenceNumber, email) {
-      var data = `{
+        var data = `{
           "referenceNumber":"` + referenceNumber + `",
           "email":"`+ email + `"
       }`;
 
-      $.ajax({
-          url: "/request-feedback",
-          type: "PUT",
-          contentType: "application/json; charset=UTF-8",
-          data: data,
-          success: function (responseData, textStatus, jqXHR) {
-              alert('Feedback Requested!');
-          },
-          error: function (jqXHR, textStatus, errorThrown) {
-              alert('Error');
-          }
-      });
+        $.ajax({
+            url: "/request-feedback",
+            type: "PUT",
+            contentType: "application/json; charset=UTF-8",
+            data: data,
+            success: function (responseData, textStatus, jqXHR) {
+                alert('Feedback Requested!');
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error');
+            }
+        });
     }
 </script>
 
